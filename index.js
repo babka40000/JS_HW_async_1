@@ -1,13 +1,11 @@
-function getPasswordChecker(password) {
-    let correctPassword = 'correct_password'; 
-
+function getPasswordChecker(correctPassword) {
     return function(pwd) {
-        return password == correctPassword;
+        return pwd == correctPassword;
     }
 }
 
-check1 = getPasswordChecker('incorrect_password')
-console.log(check1())
+check1 = getPasswordChecker('password1')
+console.log(check1('password2'))
 
-check1 = getPasswordChecker('correct_password')
-console.log(check1())
+check1 = getPasswordChecker('password1')
+console.log(check1('password1'))
